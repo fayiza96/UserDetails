@@ -20,6 +20,7 @@ class _UserState extends State<FullUserDetail> {
             return SafeArea(
               child: SingleChildScrollView(
                 child: Container(
+                  
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,

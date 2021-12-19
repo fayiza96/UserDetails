@@ -12,6 +12,7 @@ class UserProvider extends ChangeNotifier {
   Box? box;
   bool isLoading = false;
   User? currentUser;
+  List<User> searchedUsers = [];
 
   Future openBox() async {
     var dir = await getApplicationDocumentsDirectory();
@@ -23,6 +24,13 @@ class UserProvider extends ChangeNotifier {
   setUser(User user) {
     currentUser = user;
     notifyListeners();
+  }
+
+  searchData(val) {
+    searchedUsers = users;
+    searchedUsers =
+        users.where((element) => element.name!.toLowerCase().contains(val.toString().toLowerCase())).toList();
+        notifyListeners();
   }
 
   getdata() async {
