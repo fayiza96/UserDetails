@@ -75,7 +75,6 @@ class UserProvider extends ChangeNotifier {
       User user = User.fromJson(element);
       users.add(user);
     });
-    print(users[0].email);
     notifyListeners();
   }
 
